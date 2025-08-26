@@ -1,0 +1,18 @@
+{
+  "inputs": [
+    {
+      "id": "test_mcp_server",
+      "type": "promptString",
+      "description": "Test MCP Server"
+    }
+  ],
+  "servers": {
+    "test_mcp_server": {
+      "type": "stdio",
+      "command": "mcp-server-azuredevops",
+      "args": [
+        "${input:ado_org}"
+      ]
+    }
+  }
+}
