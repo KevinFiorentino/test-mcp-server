@@ -16,11 +16,11 @@ export function configTools(server: McpServer) {
   );
 
   server.tool(
-    "substract",
-    "Substract numbers",
+    "subtract",
+    "Subtract numbers",
     {
-      a: z.number().describe("First number to substract"),
-      b: z.number().describe("Second number to substract"),
+      a: z.number().describe("First number to subtract"),
+      b: z.number().describe("Second number to subtract"),
     },
     async ({ a, b }) => {
       const result = a - b;
