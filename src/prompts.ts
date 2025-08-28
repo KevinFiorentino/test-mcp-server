@@ -8,13 +8,13 @@ export const PROMPTS = {
 export function configPrompts(server: McpServer) {
   server.prompt(
     PROMPTS.calculate_investment,
-    "Calculate investment",
+    "Calculate investment income",
     {
       countDays: z.string().describe("Count of days"),
       nar: z.string().describe("Nominal Annual Rate percentaje"),
       money: z.string().describe("Investment amount"),
     },
-    ( { countDays, nar, money } ) => ({
+    ({ countDays, nar, money }) => ({
       messages: [
         {
           role: "user",
@@ -27,5 +27,6 @@ export function configPrompts(server: McpServer) {
           },
         },
       ],
-    }));
+    })
+  );
 }

@@ -2,15 +2,15 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 
 export const TOOLS = {
-  calculate_add: "add",
-  calculate_subtract: "subtract",
-  calculate_income: "calculate_income",
+  calculate_add: "add_numbers",
+  calculate_subtract: "subtract_numbers",
+  calculate_investment: "calculate_investment",
 };
 
 export function configTools(server: McpServer) {
   server.tool(
     TOOLS.calculate_add,
-    "Sum numbers",
+    "Add numbers",
     {
       a: z.number().describe("First number to sum"),
       b: z.number().describe("Second number to sum"),
@@ -35,7 +35,7 @@ export function configTools(server: McpServer) {
   );
 
   server.tool(
-    TOOLS.calculate_income,
+    TOOLS.calculate_investment,
     "Calculate investment income",
     {
       countDays: z.number().describe("Count of days"),
